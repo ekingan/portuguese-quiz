@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtv-k3-u2W" userLabel="nextQuestionButton">
+                                <rect key="frame" x="222" y="197" width="156" height="81"/>
+                                <color key="backgroundColor" red="0.42619378960257381" green="1" blue="0.83955693023075295" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="9WF-j5-d28"/>
+                                    <constraint firstAttribute="height" constant="81" id="SGZ-fM-7hL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="next question">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="POJ-w2-kV7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cM-Mz-QhS" userLabel="showAnswerButton">
+                                <rect key="frame" x="222" y="377" width="156" height="81"/>
+                                <color key="backgroundColor" red="0.42619378959999998" green="1" blue="0.8395569302" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="9aR-kR-IC6"/>
+                                    <constraint firstAttribute="width" constant="156" id="dsS-ZL-ZU3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="show answer">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C91-wh-TVC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-S4-SKF" userLabel="questionLabel">
+                                <rect key="frame" x="20" y="140" width="560" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="8Wl-MM-new"/>
+                                    <constraint firstAttribute="width" constant="156" id="rRc-49-Yzy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKl-wM-v3L" userLabel="answerLabel">
+                                <rect key="frame" x="20" y="320" width="560" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="uKX-s5-87a"/>
+                                    <constraint firstAttribute="height" constant="49" id="xOh-TB-Cin"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portuguese-Quiz" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-hd-L6B">
+                                <rect key="frame" x="180" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="GIG-Au-wPf"/>
+                                    <constraint firstAttribute="width" constant="240" id="abX-Dw-H5o"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9cM-Mz-QhS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GpX-eU-zAz"/>
+                            <constraint firstItem="dtv-k3-u2W" firstAttribute="top" secondItem="LhK-S4-SKF" secondAttribute="bottom" constant="8" id="Ky9-46-Zg9"/>
+                            <constraint firstItem="Hr9-hd-L6B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="TkM-oT-7z6"/>
+                            <constraint firstItem="LhK-S4-SKF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XvN-7a-UAP"/>
+                            <constraint firstItem="9cM-Mz-QhS" firstAttribute="top" secondItem="WKl-wM-v3L" secondAttribute="bottom" constant="8" id="bO9-4V-0tU"/>
+                            <constraint firstItem="WKl-wM-v3L" firstAttribute="top" secondItem="dtv-k3-u2W" secondAttribute="bottom" constant="42" id="gZl-j7-7L4"/>
+                            <constraint firstItem="LhK-S4-SKF" firstAttribute="top" secondItem="Hr9-hd-L6B" secondAttribute="bottom" constant="12" id="kHA-xt-rgt"/>
+                            <constraint firstItem="dtv-k3-u2W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ntY-Sy-Ow4"/>
+                            <constraint firstItem="Hr9-hd-L6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pii-To-Erg"/>
+                            <constraint firstItem="WKl-wM-v3L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vfP-eY-7Kc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="WKl-wM-v3L" id="z7O-Av-gLd"/>
+                        <outlet property="questionLabel" destination="LhK-S4-SKF" id="9iG-27-reR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Portuguese-Quiz" width="565" height="94"/>
+    </resources>
 </document>
